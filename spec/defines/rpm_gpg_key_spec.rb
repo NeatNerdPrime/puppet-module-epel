@@ -7,9 +7,9 @@ describe 'epel::rpm_gpg_key' do
     supported_os: [
       {
         'operatingsystem' => 'RedHat',
-        'operatingsystemrelease' => %w[8 9 10]
-      }
-    ]
+        'operatingsystemrelease' => %w[8 9 10],
+      },
+    ],
   }
   on_supported_os(test_on).each do |os, os_facts|
     context "on #{os}" do
@@ -30,7 +30,7 @@ describe 'epel::rpm_gpg_key' do
           command: "rpm --import #{params[:path]}",
           unless: "rpm -q gpg-pubkey-$(echo $(gpg -q --batch --with-colons --throw-keyids --keyid-format short < #{params[:path]}) | grep pub | cut -d ':' -f 5 | cut --characters=9- | tr '[A-Z]' '[a-z]')",
           require: "File[#{params[:path]}]",
-          logoutput: 'on_failure'
+          logoutput: 'on_failure',
         )
       end
     end

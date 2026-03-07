@@ -8,7 +8,7 @@ shared_examples 'epel testing' do
       proxy: 'absent',
       enabled: '0',
       gpgcheck: '1',
-      repo_gpgcheck: '0'
+      repo_gpgcheck: '0',
     )
   end
 end
@@ -21,7 +21,7 @@ shared_examples_for 'epel testing 10' do
       mirrorlist: 'https://mirrors.fedoraproject.org/metalink?repo=testing-epel10&arch=$basearch',
       gpgkey: 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-10',
       descr: 'Extra Packages for Enterprise Linux 10 - Testing - $basearch',
-      failovermethod: 'absent'
+      failovermethod: 'absent',
     )
   end
 end
@@ -34,7 +34,7 @@ shared_examples_for 'epel testing 9' do
       mirrorlist: 'https://mirrors.fedoraproject.org/metalink?repo=testing-epel9&arch=$basearch',
       gpgkey: 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-9',
       descr: 'Extra Packages for Enterprise Linux 9 - Testing - $basearch',
-      failovermethod: 'absent'
+      failovermethod: 'absent',
     )
   end
 end
@@ -47,7 +47,7 @@ shared_examples_for 'epel testing 8' do
       mirrorlist: 'https://mirrors.fedoraproject.org/metalink?repo=testing-epel8&arch=$basearch',
       gpgkey: 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8',
       descr: 'Extra Packages for Enterprise Linux 8 - Testing - $basearch',
-      failovermethod: 'absent'
+      failovermethod: 'absent',
     )
   end
 end

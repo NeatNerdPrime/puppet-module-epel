@@ -14,9 +14,9 @@ describe 'epel' do
     supported_os: [
       {
         'operatingsystem' => 'RedHat',
-        'operatingsystemrelease' => %w[8 9 10]
-      }
-    ]
+        'operatingsystemrelease' => %w[8 9 10],
+      },
+    ],
   }
   on_supported_os(test_on).each do |os, os_facts|
     context "on #{os}" do
@@ -36,7 +36,7 @@ describe 'epel' do
         context 'epel_baseurl => https://example.com/epel/8/x86_64' do
           let(:params) do
             {
-              epel_baseurl: 'https://example.com/epel/8/x86_64'
+              epel_baseurl: 'https://example.com/epel/8/x86_64',
             }
           end
 
@@ -47,7 +47,7 @@ describe 'epel' do
         context 'epel_mirrorlist => absent' do
           let(:params) do
             {
-              epel_mirrorlist: 'absent'
+              epel_mirrorlist: 'absent',
             }
           end
 
@@ -76,7 +76,7 @@ describe 'epel' do
         context 'epel_baseurl => https://example.com/epel/9/x86_64' do
           let(:params) do
             {
-              epel_baseurl: 'https://example.com/epel/9/x86_64'
+              epel_baseurl: 'https://example.com/epel/9/x86_64',
             }
           end
 
@@ -87,7 +87,7 @@ describe 'epel' do
         context 'epel_mirrorlist => absent' do
           let(:params) do
             {
-              epel_mirrorlist: 'absent'
+              epel_mirrorlist: 'absent',
             }
           end
 
@@ -116,7 +116,7 @@ describe 'epel' do
         context 'epel_baseurl => https://example.com/epel/10/x86_64' do
           let(:params) do
             {
-              epel_baseurl: 'https://example.com/epel/10/x86_64'
+              epel_baseurl: 'https://example.com/epel/10/x86_64',
             }
           end
 
@@ -127,7 +127,7 @@ describe 'epel' do
         context 'epel_mirrorlist => absent' do
           let(:params) do
             {
-              epel_mirrorlist: 'absent'
+              epel_mirrorlist: 'absent',
             }
           end
 
@@ -154,17 +154,17 @@ describe 'epel' do
       supported_os: [ # Unfortunate misnomer
         {
           'operatingsystem' => 'Fedora',
-          'operatingsystemrelease' => %w[28 29 30]
+          'operatingsystemrelease' => %w[28 29 30],
         },
         {
           'operatingsystem' => 'Debian',
-          'operatingsystemrelease' => %w[8 9 10]
+          'operatingsystemrelease' => %w[8 9 10],
         },
         {
           'operatingsystem' => 'Ubuntu',
-          'operatingsystemrelease' => %w[16.04 18.04]
-        }
-      ]
+          'operatingsystemrelease' => %w[16.04 18.04],
+        },
+      ],
     }
     on_supported_os(test_on).each do |os, os_facts|
       context "on #{os}" do

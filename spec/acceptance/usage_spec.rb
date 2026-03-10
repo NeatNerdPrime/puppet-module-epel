@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'usage tests' do
   describe 'epel baseurl and mirrorlist' do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { 'epel':
         epel_baseurl    => 'http://dl.fedoraproject.org/pub/epel/#{fact('os.release.major')}/x86_64/',
@@ -13,7 +13,7 @@ describe 'usage tests' do
       PP
     end
 
-    it_behaves_like 'an idempotent manifest'
+    it_behaves_like 'an idempotent resource'
     it_behaves_like 'EPEL is available'
 
     describe command('/usr/bin/dnf config-manager --dump epel') do
@@ -24,7 +24,7 @@ describe 'usage tests' do
   end
 
   describe 'epel-testing' do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { 'epel':
         epel_testing_enabled => '1',
@@ -32,7 +32,7 @@ describe 'usage tests' do
       PP
     end
 
-    it_behaves_like 'an idempotent manifest'
+    it_behaves_like 'an idempotent resource'
     it_behaves_like 'EPEL is available'
 
     describe command('/usr/bin/dnf config-manager --dump epel') do

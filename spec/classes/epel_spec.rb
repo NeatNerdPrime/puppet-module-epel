@@ -24,7 +24,7 @@ describe 'epel' do
 
       it { is_expected.to contain_class('epel') }
 
-      case os_facts[:operatingsystemmajrelease]
+      case os_facts[:os]['release']['major']
       when '8'
         it_behaves_like 'base 8'
         it_behaves_like 'gpgkey 8'
